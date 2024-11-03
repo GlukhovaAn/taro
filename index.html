@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+    initial-scale=1.0"
+    />
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Глухова</a>
+      <nav class="navbar">
+        <a href="./index.html">Главная</a>
+        <!--  class="active" -->
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button class="navbarBtn">
+        <img
+          class="navbarBtnImg active"
+          id="open-navbar"
+          src="./images/menu-svgrepo-com.svg"
+        />
+        <img
+          class="navbarBtnImg"
+          id="close-navbar"
+          src="./images/close-white.svg"
+        />
+      </button>
+    </header>
+    <section class="section intro">
+      <img class="introLogo" src="" />
+      <h1 class="introTitle"><span>Таролог</span> <span>мечты</span></h1>
+      <div class="introBottom">
+        <p class="introSubTitle">Найду вашу любовь!</p>
+        <p class="introDescription">Откройте сердце новому: предсказания для искренней любви.Таро: ваш гид в мире романтики и страсти. 
+        </p>
+        <a class="introBtn" href="#contacts">связаться с нами</a>
+      </div>
+    </section>
+    <section class="section contacts" id="contacts">
+      <div class="contacts__container">
+        <div class="contacts_column1">
+          <h2 class="contacts__text--lg">Ждём Ваших идей, свяжитесь с нами</h2>
+          <p class="contacts__text--lg">
+            <a href="tel:+79129995813">+7 912 999 58 13</a>
+          </p>
+          <ul class="contacts__socials">
+            <li class="contacts__social">
+              <a href="#">
+                <img src="./images/telegram.svg" /><span>Telegram</span></a
+              >
+            </li>
+            <li class="contacts__social">
+              <a href="#">
+                <img src="./images/whatsapp.svg" /><span>WhatsApp</span></a
+              >
+            </li>
+            <li class="contacts__social">
+              <a href="#">
+                <img src="./images/vk-logo.svg" /><span>ВКонтакте</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="contacts_column2">
+          <h2 class="contacts__text--lg">Или оставьте заявку</h2>
+          <form class="contacts__form" action="">
+            <input
+              type="text"
+              class="contacts__input"
+              id="name"
+              placeholder="Имя"
+            />
+            <input
+              type="text"
+              class="contacts__input"
+              id="phone"
+              placeholder="Телефон"
+            />
+            <label for="checkbox" class="contacts__checkbox-label"
+              ><input
+                type="checkbox"
+                class="contacts__checkbox"
+                id="checkbox"
+                checked
+              />Я согласен на обработку
+              <a href="#">персональных данных</a></label
+            >
+            <input
+              type="submit"
+              id="submit"
+              value="Отправить"
+              class="contacts__submit-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+    <dialog id="pop-up" class="popup" style="display: none">
+      <img src="./images/close-black.svg" class="popup__close" />
+      <p>
+        <span id="user-name"></span>, мы с Вами свяжемся по номеру
+        <span id="user-phone"></span>
+      </p>
+    </dialog>
+  </body>
+  <script src="./script/script.js"></script>
+  <script src="./script/contacts.js"></script>
+  <script>
+    document.addEventListener("keydown", (e)=>{
+      const key = e.key;
+      if(key === 'ArrowDown'){
+        window.location.href = "./pages/portfolio.html"
+      }
+    })
+
+  </script>
+</html>
