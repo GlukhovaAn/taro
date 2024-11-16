@@ -39,3 +39,42 @@ window.addEventListener("scroll", () => {
     header.classList.add("up");
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".tarot-card");
+
+  // Анимация при наведении мыши
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      gsap.to(card, {
+        scale: 1.3,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.5)",
+        zIndex: 100,
+      });
+    });
+
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, {
+        scale: 1,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.5)",
+        zIndex: 1,
+      });
+    });
+
+    // Анимация при клике - перемещение карты в центр и увеличение
+    card.addEventListener("click", () => {
+      gsap.to(card, {
+        scale: 2,
+        duration: 0.7,
+        zIndex: 200,
+        rotation: 0,
+        top: "50%",
+        left: "50%",
+        xPercent: -50,
+        yPercent: -50,
+        ease: "power2.out",
+      });
+    });
+  });
+});

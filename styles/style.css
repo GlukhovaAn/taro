@@ -158,3 +158,61 @@ section {
   margin: 0 auto;
   padding-bottom: 90px;
 }
+.tarot-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #330235;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tarot-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  animation: rotate 30s infinite linear;
+}
+
+.tarot-card {
+  position: absolute;
+  width: 100px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tarot-card:hover {
+  transform: scale(1.2) rotate(5deg);
+  z-index: 10;
+}
+
+.tarot-card:nth-child(1) {
+  transform: rotate(0deg) translate(180px) rotate(0deg);
+}
+.tarot-card:nth-child(2) {
+  transform: rotate(72deg) translate(180px) rotate(-72deg);
+}
+.tarot-card:nth-child(3) {
+  transform: rotate(144deg) translate(180px) rotate(-144deg);
+}
+.tarot-card:nth-child(4) {
+  transform: rotate(216deg) translate(180px) rotate(-216deg);
+}
+.tarot-card:nth-child(5) {
+  transform: rotate(288deg) translate(180px) rotate(-288deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
